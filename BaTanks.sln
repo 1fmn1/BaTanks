@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BaTanks", "BaTanks.Net\BaTanks.vbproj", "{436C4DD4-8902-4A63-A2AF-C97A423007FC}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://sole-nero.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BaTanks.Net\\BaTanks.vbproj
+		SccProjectName1 = BaTanks.Net
+		SccLocalPath1 = BaTanks.Net
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{436C4DD4-8902-4A63-A2AF-C97A423007FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436C4DD4-8902-4A63-A2AF-C97A423007FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436C4DD4-8902-4A63-A2AF-C97A423007FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436C4DD4-8902-4A63-A2AF-C97A423007FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

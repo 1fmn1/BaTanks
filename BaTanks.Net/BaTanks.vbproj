@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{436C4DD4-8902-4A63-A2AF-C97A423007FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>BaTanks.My.MyApplication</StartupObject>
+    <RootNamespace>BaTanks</RootNamespace>
+    <AssemblyName>BaTanks</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <PublishUrl>опубликовать\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>BaTanks.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>BaTanks.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Танки.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX.AudioVideoPlayback, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.AudioVideoPlayback.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ctrlLANUser.Designer.vb">
+      <DependentUpon>ctrlLANUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlLANUser.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmvsMain.Designer.vb">
+      <DependentUpon>FrmvsMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmvsMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainChat.designer.vb">
+      <DependentUpon>mainChat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mainChat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Классы\clsAnimation.vb" />
+    <Compile Include="Классы\clsBlock.vb" />
+    <Compile Include="Классы\clsBonus.vb" />
+    <Compile Include="Классы\clsBox.vb" />
+    <Compile Include="Классы\clsShot.vb" />
+    <Compile Include="Классы\clsTankNew.vb" />
+    <Compile Include="Классы\clsTrack.vb" />
+    <Compile Include="Классы\RichTextBoxWriter.vb" />
+    <Compile Include="Контролы\ctrlColor.Designer.vb">
+      <DependentUpon>ctrlColor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Контролы\ctrlColor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Контролы\ctrlEditor.Designer.vb">
+      <DependentUpon>ctrlEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Контролы\ctrlEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Контролы\ctrlHello.Designer.vb">
+      <DependentUpon>ctrlHello.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Контролы\ctrlHello.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Модули\modAPI.vb" />
+    <Compile Include="Модули\modDirectShow.vb" />
+    <Compile Include="Модули\modTanksModule1.vb" />
+    <Compile Include="Модули\modTanksModule2.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Модули\modServer.vb" />
+    <Compile Include="Модули\modClient.vb" />
+    <Compile Include="Модули\Sprite.vb" />
+    <Compile Include="Модули\SR2D.vb" />
+    <Compile Include="Контролы\ctrlOption.Designer.vb">
+      <DependentUpon>ctrlOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Контролы\ctrlOption.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ctrlLANUser.resx">
+      <DependentUpon>ctrlLANUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmvsMain.resx">
+      <DependentUpon>FrmvsMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainChat.resx">
+      <DependentUpon>mainChat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Контролы\ctrlColor.resx">
+      <DependentUpon>ctrlColor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Контролы\ctrlEditor.resx">
+      <DependentUpon>ctrlEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Контролы\ctrlHello.resx">
+      <DependentUpon>ctrlHello.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Контролы\ctrlOption.resx">
+      <DependentUpon>ctrlOption.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Графика\BackStyleAkasia.btj" />
+    <None Include="Графика\bonus.btj" />
+    <None Include="Графика\Edges1.btj" />
+    <None Include="Графика\EndingMenu.btj" />
+    <None Include="Графика\exp1.btj" />
+    <None Include="Графика\exp3.btj" />
+    <None Include="Графика\Explo1.btj" />
+    <None Include="Графика\explosion.btj" />
+    <None Include="Графика\lightning.btj" />
+    <None Include="Графика\Numbers1.btj" />
+    <None Include="Графика\Resp.btj" />
+    <None Include="Графика\shield.btj" />
+    <None Include="Графика\Shot.btj" />
+    <None Include="Графика\ShotAnim.btj" />
+    <None Include="Графика\StatusMenu3.btj" />
+    <None Include="Графика\Tracks2.btj" />
+    <None Include="Графика\Winner.btj" />
+    <None Include="Графика\Старые\ShotAnim00001.psd" />
+    <None Include="Графика\Танки.btj" />
+    <None Include="Карты\.btm" />
+    <None Include="Карты\11Тест.btm" />
+    <None Include="Карты\1VerMap.btm" />
+    <None Include="Карты\50x50Map.btm" />
+    <None Include="Карты\AAmap.btm" />
+    <None Include="Карты\ANyan.btm" />
+    <None Include="Карты\ATestDemo.btm" />
+    <None Include="Карты\BlockMap.btm" />
+    <None Include="Карты\BlockT2Map.btm" />
+    <None Include="Карты\New.btm" />
+    <None Include="Карты\New2.btm" />
+    <None Include="Карты\NewMap.btm" />
+    <None Include="Карты\Snoop.btm" />
+    <None Include="Карты\Snoop2.btm" />
+    <None Include="Карты\Snoop3.btm" />
+    <None Include="Карты\Snoop4.btm" />
+    <None Include="Карты\Snoop5.btm" />
+    <None Include="Карты\пнг.btm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fight.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expl.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Explosion.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FastShot.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prize.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ledCornerRed.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ledCornerGray.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ledCornerGreen.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ledCornerOrange.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sounds\BackMelody1.mp3" />
+    <Content Include="Sounds\backmelody2.mp3" />
+    <Content Include="Sounds\expl.wav" />
+    <Content Include="Sounds\Explosion.wav" />
+    <Content Include="Sounds\FastShot.wav" />
+    <Content Include="Sounds\Prize.wav" />
+    <Content Include="SR2D.dll" />
+    <Content Include="Графика\AnimBonus.png" />
+    <Content Include="Графика\AnimTankResp.png" />
+    <Content Include="Графика\BaTanks\BaTanks.avi" />
+    <Content Include="Графика\BaTanks\BaTanks00000.png" />
+    <Content Include="Графика\BaTanks\BaTanks00001.png" />
+    <Content Include="Графика\BaTanks\BaTanks00002.png" />
+    <Content Include="Графика\BaTanks\BaTanks00003.png" />
+    <Content Include="Графика\BaTanks\BaTanks00004.png" />
+    <Content Include="Графика\BaTanks\BaTanks00005.png" />
+    <Content Include="Графика\BaTanks\BaTanks00006.png" />
+    <Content Include="Графика\BaTanks\BaTanks00007.png" />
+    <Content Include="Графика\BaTanks\BaTanks00008.png" />
+    <Content Include="Графика\BaTanks\BaTanks00009.png" />
+    <Content Include="Графика\BaTanks\BaTanks00010.png" />
+    <Content Include="Графика\BaTanks\BaTanks00011.png" />
+    <Content Include="Графика\BaTanks\BaTanks00012.png" />
+    <Content Include="Графика\BaTanks\BaTanks00013.png" />
+    <Content Include="Графика\BaTanks\BaTanks00014.png" />
+    <Content Include="Графика\BaTanks\BaTanks00015.png" />
+    <Content Include="Графика\BaTanks\BaTanks00016.png" />
+    <Content Include="Графика\BaTanks\BaTanks00017.png" />
+    <Content Include="Графика\BaTanks\BaTanks00018.png" />
+    <Content Include="Графика\BaTanks\BaTanks00019.png" />
+    <Content Include="Графика\BaTanks\BaTanks00020.png" />
+    <Content Include="Графика\BaTanks\BaTanks00021.png" />
+    <Content Include="Графика\BaTanks\BaTanks00022.png" />
+    <Content Include="Графика\BaTanks\BaTanks00023.png" />
+    <Content Include="Графика\BaTanks\BaTanks00024.png" />
+    <Content Include="Графика\BaTanks\BaTanks00025.png" />
+    <Content Include="Графика\BaTanks\BaTanks00026.png" />
+    <Content Include="Графика\BaTanks\BaTanks00027.png" />
+    <Content Include="Графика\BaTanks\BaTanks00028.png" />
+    <Content Include="Графика\BaTanks\BaTanks00029.png" />
+    <Content Include="Графика\BaTanks\BaTanks00030.png" />
+    <Content Include="Графика\BaTanks\BaTanks00031.png" />
+    <Content Include="Графика\BaTanks\BaTanks00032.png" />
+    <Content Include="Графика\BaTanks\BaTanks00033.png" />
+    <Content Include="Графика\BaTanks\BaTanks00034.png" />
+    <Content Include="Графика\BaTanks\BaTanks00035.png" />
+    <Content Include="Графика\BaTanks\BaTanks00036.png" />
+    <Content Include="Графика\BaTanks\BaTanks00037.png" />
+    <Content Include="Графика\BaTanks\BaTanks00038.png" />
+    <Content Include="Графика\BaTanks\BaTanks00039.png" />
+    <Content Include="Графика\BaTanks\BaTanks00040.png" />
+    <Content Include="Графика\BaTanks\BaTanks00041.png" />
+    <Content Include="Графика\BaTanks\BaTanks00042.png" />
+    <Content Include="Графика\BaTanks\BaTanks00043.png" />
+    <Content Include="Графика\BaTanks\BaTanks00044.png" />
+    <Content Include="Графика\BaTanks\BaTanks00045.png" />
+    <Content Include="Графика\BaTanks\BaTanks00046.png" />
+    <Content Include="Графика\BaTanks\BaTanks00047.png" />
+    <Content Include="Графика\BaTanks\BaTanks00048.png" />
+    <Content Include="Графика\BaTanks\BaTanks00049.png" />
+    <Content Include="Графика\BaTanks\BaTanks00050.png" />
+    <Content Include="Графика\BaTanks\BaTanks00051.png" />
+    <Content Include="Графика\BaTanks\BaTanks00052.png" />
+    <Content Include="Графика\BaTanks\BaTanks00053.png" />
+    <Content Include="Графика\BaTanks\BaTanks00054.png" />
+    <Content Include="Графика\BaTanks\BaTanks00055.png" />
+    <Content Include="Графика\BaTanks\BaTanks00056.png" />
+    <Content Include="Графика\BaTanks\BaTanks00057.png" />
+    <Content Include="Графика\BaTanks\BaTanks00058.png" />
+    <Content Include="Графика\BaTanks\BaTanks00059.png" />
+    <Content Include="Графика\BaTanks\BaTanks00060.png" />
+    <Content Include="Графика\BaTanks\BaTanks00061.png" />
+    <Content Include="Графика\BaTanks\BaTanks00062.png" />
+    <Content Include="Графика\BaTanks\BaTanks00063.png" />
+    <Content Include="Графика\BaTanks\BaTanks00064.png" />
+    <Content Include="Графика\BaTanks\BaTanks00065.png" />
+    <Content Include="Графика\BaTanks\BaTanks00066.png" />
+    <Content Include="Графика\BaTanks\BaTanks00067.png" />
+    <Content Include="Графика\BaTanks\BaTanks00068.png" />
+    <Content Include="Графика\BaTanks\BaTanks00069.png" />
+    <Content Include="Графика\BaTanks\BaTanks00070.png" />
+    <Content Include="Графика\BaTanks\BaTanks00071.png" />
+    <Content Include="Графика\BaTanks\BaTanks00072.png" />
+    <Content Include="Графика\BaTanks\BaTanks00073.png" />
+    <Content Include="Графика\BaTanks\BaTanks00074.png" />
+    <Content Include="Графика\BaTanks\BaTanks00075.png" />
+    <Content Include="Графика\BaTanks\BaTanks00076.png" />
+    <Content Include="Графика\BaTanks\BaTanks00077.png" />
+    <Content Include="Графика\BaTanks\BaTanks00078.png" />
+    <Content Include="Графика\BaTanks\BaTanks00079.png" />
+    <Content Include="Графика\BaTanks\BaTanks00080.png" />
+    <Content Include="Графика\BaTanks\BaTanks00081.png" />
+    <Content Include="Графика\BaTanks\BaTanks00082.png" />
+    <Content Include="Графика\BaTanks\BaTanks00083.png" />
+    <Content Include="Графика\BaTanks\BaTanks00084.png" />
+    <Content Include="Графика\BaTanks\BaTanks00085.png" />
+    <Content Include="Графика\BaTanks\BaTanks00086.png" />
+    <Content Include="Графика\BaTanks\BaTanks00087.png" />
+    <Content Include="Графика\BaTanks\BaTanks00088.png" />
+    <Content Include="Графика\BaTanks\BaTanks00089.png" />
+    <Content Include="Графика\BaTanks\BaTanks00090.png" />
+    <Content Include="Графика\BaTanks\BaTanks00091.png" />
+    <Content Include="Графика\BaTanks\BaTanks00092.png" />
+    <Content Include="Графика\BaTanks\BaTanks00093.png" />
+    <Content Include="Графика\BaTanks\BaTanks00094.png" />
+    <Content Include="Графика\BaTanks\BaTanks00095.png" />
+    <Content Include="Графика\BaTanks\BaTanks00096.png" />
+    <Content Include="Графика\BaTanks\BaTanks00097.png" />
+    <Content Include="Графика\BaTanks\BaTanks00098.png" />
+    <Content Include="Графика\BaTanks\BaTanks00099.png" />
+    <Content Include="Графика\BaTanks\BaTanks00100.png" />
+    <Content Include="Графика\BaTanks\BaTanks00101.png" />
+    <Content Include="Графика\BaTanks\BaTanks00102.png" />
+    <Content Include="Графика\BaTanks\BaTanks00103.png" />
+    <Content Include="Графика\BaTanks\BaTanks00104.png" />
+    <Content Include="Графика\BaTanks\BaTanks00105.png" />
+    <Content Include="Графика\BaTanks\BaTanks00106.png" />
+    <Content Include="Графика\BaTanks\BaTanks00107.png" />
+    <Content Include="Графика\BaTanks\BaTanks00108.png" />
+    <Content Include="Графика\BaTanks\BaTanks00109.png" />
+    <Content Include="Графика\BaTanks\BaTanks00110.png" />
+    <Content Include="Графика\BaTanks\BaTanks00111.png" />
+    <Content Include="Графика\BaTanks\BaTanks00112.png" />
+    <Content Include="Графика\BaTanks\BaTanks00113.png" />
+    <Content Include="Графика\BaTanks\BaTanks00114.png" />
+    <Content Include="Графика\BaTanks\BaTanks00115.png" />
+    <Content Include="Графика\BaTanks\BaTanks00116.png" />
+    <Content Include="Графика\BaTanks\BaTanks00117.png" />
+    <Content Include="Графика\BaTanks\BaTanks00118.png" />
+    <Content Include="Графика\BaTanks\BaTanks00119.png" />
+    <Content Include="Графика\BaTanks\BaTanks00120.png" />
+    <Content Include="Графика\BaTanks\BaTanks00121.png" />
+    <Content Include="Графика\BaTanks\BaTanks00122.png" />
+    <Content Include="Графика\BaTanks\BaTanks00123.png" />
+    <Content Include="Графика\BaTanks\BaTanks00124.png" />
+    <Content Include="Графика\BaTanks\BaTanks00125.png" />
+    <Content Include="Графика\BaTanks\BaTanks00126.png" />
+    <Content Include="Графика\BaTanks\BaTanks00127.png" />
+    <Content Include="Графика\BaTanks\BaTanks00128.png" />
+    <Content Include="Графика\BaTanks\BaTanks00129.png" />
+    <Content Include="Графика\BaTanks\BaTanks00130.png" />
+    <Content Include="Графика\BaTanks\BaTanks00131.png" />
+    <Content Include="Графика\BaTanks\BaTanks00132.png" />
+    <Content Include="Графика\BaTanks\BaTanks00133.png" />
+    <Content Include="Графика\BaTanks\BaTanks00134.png" />
+    <Content Include="Графика\BaTanks\BaTanks00135.png" />
+    <Content Include="Графика\BaTanks\BaTanks00136.png" />
+    <Content Include="Графика\BaTanks\BaTanks00137.png" />
+    <Content Include="Графика\BaTanks\BaTanks00138.png" />
+    <Content Include="Графика\BaTanks\BaTanks00139.png" />
+    <Content Include="Графика\BaTanks\BaTanks00140.png" />
+    <Content Include="Графика\BaTanks\BaTanks00141.png" />
+    <Content Include="Графика\BaTanks\BaTanks00142.png" />
+    <Content Include="Графика\BaTanks\BaTanks00143.png" />
+    <Content Include="Графика\BaTanks\BaTanks00144.png" />
+    <Content Include="Графика\BaTanks\BaTanks00145.png" />
+    <Content Include="Графика\BaTanks\BaTanks00146.png" />
+    <Content Include="Графика\BaTanks\BaTanks00147.png" />
+    <Content Include="Графика\BaTanks\BaTanks00148.png" />
+    <Content Include="Графика\BaTanks\BaTanks00149.png" />
+    <Content Include="Графика\BaTanks\BaTanks00150.png" />
+    <Content Include="Графика\BaTanks\BaTanks00151.png" />
+    <Content Include="Графика\BaTanks\BaTanks00152.png" />
+    <Content Include="Графика\BaTanks\BaTanks00153.png" />
+    <Content Include="Графика\BaTanks\BaTanks00154.png" />
+    <Content Include="Графика\BaTanks\BaTanks00155.png" />
+    <Content Include="Графика\BaTanks\BaTanks00156.png" />
+    <Content Include="Графика\BaTanks\BaTanks00157.png" />
+    <Content Include="Графика\BaTanks\BaTanks00158.png" />
+    <Content Include="Графика\BaTanks\BaTanks00159.png" />
+    <Content Include="Графика\BaTanks\BaTanks00160.png" />
+    <Content Include="Графика\BaTanks\BaTanks00161.png" />
+    <Content Include="Графика\BaTanks\BaTanks00162.png" />
+    <Content Include="Графика\BaTanks\BaTanks00163.png" />
+    <Content Include="Графика\BaTanks\BaTanks00164.png" />
+    <Content Include="Графика\BaTanks\BaTanks00165.png" />
+    <Content Include="Графика\BaTanks\BaTanks00166.png" />
+    <Content Include="Графика\BaTanks\BaTanks00167.png" />
+    <Content Include="Графика\BaTanks\BaTanks00168.png" />
+    <Content Include="Графика\BaTanks\BaTanks00169.png" />
+    <Content Include="Графика\BaTanks\BaTanks00170.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00000.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00001.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00002.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00003.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00004.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00005.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00006.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00007.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00008.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00009.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00010.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00011.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00012.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00013.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00014.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00015.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00016.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00017.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00018.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00019.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00020.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00021.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00022.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00023.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00024.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00025.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00026.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00027.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00028.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00029.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00030.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00031.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00032.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00033.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00034.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00035.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00036.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00037.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00038.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00039.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00040.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00041.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00042.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00043.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00044.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00045.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00046.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00047.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00048.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00049.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00050.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00051.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00052.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00053.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00054.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00055.png" />
+    <Content Include="Графика\BonusAnim\BonusAnim00056.png" />
+    <Content Include="Графика\BonusAnim\New.png" />
+    <Content Include="Графика\BonusAnim\Склейщик11.exe" />
+    <Content Include="Графика\MenuBonus.png" />
+    <Content Include="Графика\Numbers\100000.png" />
+    <Content Include="Графика\Numbers\100001.png" />
+    <Content Include="Графика\Numbers\100002.png" />
+    <Content Include="Графика\Numbers\100003.png" />
+    <Content Include="Графика\Numbers\100004.png" />
+    <Content Include="Графика\Numbers\100005.png" />
+    <Content Include="Графика\Numbers\100006.png" />
+    <Content Include="Графика\Numbers\100007.png" />
+    <Content Include="Графика\Numbers\100008.png" />
+    <Content Include="Графика\Numbers\100009.png" />
+    <Content Include="Графика\Numbers\100010.png" />
+    <Content Include="Графика\Numbers\100011.png" />
+    <Content Include="Графика\Numbers\100012.png" />
+    <Content Include="Графика\Numbers\100013.png" />
+    <Content Include="Графика\Numbers\100014.png" />
+    <Content Include="Графика\Numbers\100015.png" />
+    <Content Include="Графика\Numbers\100016.png" />
+    <Content Include="Графика\Numbers\100017.png" />
+    <Content Include="Графика\Numbers\100018.png" />
+    <Content Include="Графика\Numbers\100019.png" />
+    <Content Include="Графика\Numbers\100020.png" />
+    <Content Include="Графика\Numbers\100021.png" />
+    <Content Include="Графика\Numbers\100022.png" />
+    <Content Include="Графика\Numbers\100023.png" />
+    <Content Include="Графика\Numbers\100024.png" />
+    <Content Include="Графика\Numbers\100025.png" />
+    <Content Include="Графика\Numbers\100026.png" />
+    <Content Include="Графика\Numbers\100027.png" />
+    <Content Include="Графика\Numbers\100028.png" />
+    <Content Include="Графика\Numbers\100029.png" />
+    <Content Include="Графика\Numbers\100030.png" />
+    <Content Include="Графика\Numbers\100031.png" />
+    <Content Include="Графика\Numbers\100032.png" />
+    <Content Include="Графика\Numbers\100033.png" />
+    <Content Include="Графика\Numbers\100034.png" />
+    <Content Include="Графика\Numbers\100035.png" />
+    <Content Include="Графика\Numbers\100036.png" />
+    <Content Include="Графика\Numbers\100037.png" />
+    <Content Include="Графика\Numbers\100038.png" />
+    <Content Include="Графика\Numbers\100039.png" />
+    <Content Include="Графика\Numbers\100040.png" />
+    <Content Include="Графика\Numbers\100041.png" />
+    <Content Include="Графика\Numbers\100042.png" />
+    <Content Include="Графика\Numbers\100043.png" />
+    <Content Include="Графика\Numbers\100044.png" />
+    <Content Include="Графика\Numbers\100045.png" />
+    <Content Include="Графика\Numbers\100046.png" />
+    <Content Include="Графика\Numbers\100047.png" />
+    <Content Include="Графика\Numbers\100048.png" />
+    <Content Include="Графика\Numbers\100049.png" />
+    <Content Include="Графика\Numbers\100050.png" />
+    <Content Include="Графика\Numbers\100051.png" />
+    <Content Include="Графика\Numbers\100052.png" />
+    <Content Include="Графика\Numbers\100053.png" />
+    <Content Include="Графика\Numbers\100054.png" />
+    <Content Include="Графика\Numbers\100055.png" />
+    <Content Include="Графика\Numbers\100056.png" />
+    <Content Include="Графика\Numbers\100057.png" />
+    <Content Include="Графика\Numbers\100058.png" />
+    <Content Include="Графика\Numbers\100059.png" />
+    <Content Include="Графика\Numbers\100060.png" />
+    <Content Include="Графика\Numbers\100061.png" />
+    <Content Include="Графика\Numbers\100062.png" />
+    <Content Include="Графика\Numbers\100063.png" />
+    <Content Include="Графика\Numbers\100064.png" />
+    <Content Include="Графика\Numbers\100065.png" />
+    <Content Include="Графика\Numbers\100066.png" />
+    <Content Include="Графика\Numbers\100067.png" />
+    <Content Include="Графика\Numbers\100068.png" />
+    <Content Include="Графика\Numbers\100069.png" />
+    <Content Include="Графика\Numbers\100070.png" />
+    <Content Include="Графика\Numbers\100071.png" />
+    <Content Include="Графика\Numbers\100072.png" />
+    <Content Include="Графика\Numbers\100073.png" />
+    <Content Include="Графика\Numbers\100074.png" />
+    <Content Include="Графика\Numbers\100075.png" />
+    <Content Include="Графика\Numbers\100076.png" />
+    <Content Include="Графика\Numbers\100077.png" />
+    <Content Include="Графика\RespAnim\RespAnim00000.png" />
+    <Content Include="Графика\RespAnim\RespAnim00001.png" />
+    <Content Include="Графика\RespAnim\RespAnim00002.png" />
+    <Content Include="Графика\RespAnim\RespAnim00003.png" />
+    <Content Include="Графика\RespAnim\RespAnim00004.png" />
+    <Content Include="Графика\RespAnim\RespAnim00005.png" />
+    <Content Include="Графика\RespAnim\RespAnim00006.png" />
+    <Content Include="Графика\RespAnim\RespAnim00007.png" />
+    <Content Include="Графика\RespAnim\RespAnim00008.png" />
+    <Content Include="Графика\RespAnim\RespAnim00009.png" />
+    <Content Include="Графика\RespAnim\RespAnim00010.png" />
+    <Content Include="Графика\RespAnim\RespAnim00011.png" />
+    <Content Include="Графика\RespAnim\RespAnim00012.png" />
+    <Content Include="Графика\RespAnim\RespAnim00013.png" />
+    <Content Include="Графика\RespAnim\RespAnim00014.png" />
+    <Content Include="Графика\RespAnim\RespAnim00015.png" />
+    <Content Include="Графика\RespAnim\RespAnim00016.png" />
+    <Content Include="Графика\RespAnim\RespAnim00017.png" />
+    <Content Include="Графика\RespAnim\RespAnim00018.png" />
+    <Content Include="Графика\RespAnim\RespAnim00019.png" />
+    <Content Include="Графика\RespAnim\RespAnim00020.png" />
+    <Content Include="Графика\RespAnim\RespAnim00021.png" />
+    <Content Include="Графика\RespAnim\RespAnim00022.png" />
+    <Content Include="Графика\RespAnim\RespAnim00023.png" />
+    <Content Include="Графика\RespAnim\RespAnim00024.png" />
+    <Content Include="Графика\RespAnim\RespAnim00025.png" />
+    <Content Include="Графика\RespAnim\RespAnim00026.png" />
+    <Content Include="Графика\RespAnim\RespAnim00027.png" />
+    <Content Include="Графика\RespAnim\RespAnim00028.png" />
+    <Content Include="Графика\RespAnim\RespAnim00029.png" />
+    <Content Include="Графика\RespAnim\RespAnim00030.png" />
+    <Content Include="Графика\RespAnim\RespAnim00031.png" />
+    <Content Include="Графика\RespAnim\RespAnim00032.png" />
+    <Content Include="Графика\RespAnim\RespAnim00033.png" />
+    <Content Include="Графика\RespAnim\RespAnim00034.png" />
+    <Content Include="Графика\RespAnim\RespAnim00035.png" />
+    <Content Include="Графика\RespAnim\RespAnim00036.png" />
+    <Content Include="Графика\RespAnim\RespAnim00037.png" />
+    <Content Include="Графика\RespAnim\RespAnim00038.png" />
+    <Content Include="Графика\RespAnim\RespAnim00039.png" />
+    <Content Include="Графика\RespAnim\RespAnim00040.png" />
+    <Content Include="Графика\RespAnim\RespAnim00041.png" />
+    <Content Include="Графика\RespAnim\RespAnim00042.png" />
+    <Content Include="Графика\RespAnim\RespAnim00043.png" />
+    <Content Include="Графика\RespAnim\RespAnim00044.png" />
+    <Content Include="Графика\RespAnim\RespAnim00045.png" />
+    <Content Include="Графика\RespAnim\RespAnim00046.png" />
+    <Content Include="Графика\RespAnim\RespAnim00047.png" />
+    <Content Include="Графика\RespAnim\RespAnim00048.png" />
+    <Content Include="Графика\RespAnim\RespAnim00049.png" />
+    <Content Include="Графика\RespAnim\RespAnim00050.png" />
+    <Content Include="Графика\RespAnim\RespAnim00051.png" />
+    <Content Include="Графика\RespAnim\RespAnim00052.png" />
+    <Content Include="Графика\RespAnim\RespAnim00053.png" />
+    <Content Include="Графика\RespAnim\RespAnim00054.png" />
+    <Content Include="Графика\RespAnim\RespAnim00055.png" />
+    <Content Include="Графика\RespAnim\RespAnim00056.png" />
+    <Content Include="Графика\RespAnim\RespAnim00057.png" />
+    <Content Include="Графика\RespAnim\RespAnim00058.png" />
+    <Content Include="Графика\RespAnim\RespAnim00059.png" />
+    <Content Include="Графика\RespAnim\RespAnim00060.png" />
+    <Content Include="Графика\RespAnim\RespAnim00061.png" />
+    <Content Include="Графика\RespAnim\RespAnim00062.png" />
+    <Content Include="Графика\RespAnim\RespAnim00063.png" />
+    <Content Include="Графика\RespAnim\RespAnim00064.png" />
+    <Content Include="Графика\RespAnim\RespAnim00065.png" />
+    <Content Include="Графика\RespAnim\RespAnim00066.png" />
+    <Content Include="Графика\RespAnim\RespAnim00067.png" />
+    <Content Include="Графика\RespAnim\RespAnim00068.png" />
+    <Content Include="Графика\RespAnim\RespAnim00069.png" />
+    <Content Include="Графика\RespAnim\RespAnim00070.png" />
+    <Content Include="Графика\RespAnim\RespAnim00071.png" />
+    <Content Include="Графика\RespAnim\RespAnim00072.png" />
+    <Content Include="Графика\RespAnim\RespAnim00073.png" />
+    <Content Include="Графика\RespAnim\RespAnim00074.png" />
+    <Content Include="Графика\RespAnim\RespAnim00075.png" />
+    <Content Include="Графика\RespAnim\RespAnim00076.png" />
+    <Content Include="Графика\RespAnim\RespAnim00077.png" />
+    <Content Include="Графика\RespAnim\RespAnim00078.png" />
+    <Content Include="Графика\RespAnim\RespAnim00079.png" />
+    <Content Include="Графика\RespAnim\RespAnim00080.png" />
+    <Content Include="Графика\RespAnim\RespAnim00081.png" />
+    <Content Include="Графика\RespAnim\RespAnim00082.png" />
+    <Content Include="Графика\RespAnim\RespAnim00083.png" />
+    <Content Include="Графика\RespAnim\RespAnim00084.png" />
+    <Content Include="Графика\RespAnim\RespAnim00085.png" />
+    <Content Include="Графика\RespAnim\RespAnim00086.png" />
+    <Content Include="Графика\RespAnim\RespAnim00087.png" />
+    <Content Include="Графика\RespAnim\RespAnim00088.png" />
+    <Content Include="Графика\RespAnim\RespAnim00089.png" />
+    <Content Include="Графика\RespAnim\RespAnim00090.png" />
+    <Content Include="Графика\RespAnim\RespAnim00091.png" />
+    <Content Include="Графика\RespAnim\RespAnim00092.png" />
+    <Content Include="Графика\RespAnim\RespAnim00093.png" />
+    <Content Include="Графика\RespAnim\RespAnim00094.png" />
+    <Content Include="Графика\RespAnim\RespAnim00095.png" />
+    <Content Include="Графика\RespAnim\RespAnim00096.png" />
+    <Content Include="Графика\RespAnim\RespAnim00097.png" />
+    <Content Include="Графика\RespAnim\RespAnim00098.png" />
+    <Content Include="Графика\RespAnim\RespAnim00099.png" />
+    <Content Include="Графика\RespAnim\RespAnim00100.png" />
+    <Content Include="Графика\RespAnim\RespTankAnim.png" />
+    <Content Include="Графика\RespAnim\Склейщик11.exe" />
+    <Content Include="Графика\Shield.png" />
+    <Content Include="Графика\Shield\Shield.png" />
+    <Content Include="Графика\Shield\Склейщик11.exe" />
+    <Content Include="Графика\Shield\Щит00000.png" />
+    <Content Include="Графика\Shield\Щит00001.png" />
+    <Content Include="Графика\Shield\Щит00002.png" />
+    <Content Include="Графика\Shield\Щит00003.png" />
+    <Content Include="Графика\Shield\Щит00004.png" />
+    <Content Include="Графика\Shield\Щит00005.png" />
+    <Content Include="Графика\Shield\Щит00006.png" />
+    <Content Include="Графика\Shield\Щит00007.png" />
+    <Content Include="Графика\Shield\Щит00008.png" />
+    <Content Include="Графика\Shield\Щит00009.png" />
+    <Content Include="Графика\Shield\Щит00010.png" />
+    <Content Include="Графика\Shield\Щит00011.png" />
+    <Content Include="Графика\Shield\Щит00012.png" />
+    <Content Include="Графика\Shield\Щит00013.png" />
+    <Content Include="Графика\Shield\Щит00014.png" />
+    <Content Include="Графика\Shield\Щит00015.png" />
+    <Content Include="Графика\Shield\Щит00016.png" />
+    <Content Include="Графика\Shield\Щит00017.png" />
+    <Content Include="Графика\Shield\Щит00018.png" />
+    <Content Include="Графика\Shield\Щит00019.png" />
+    <Content Include="Графика\Shield\Щит00020.png" />
+    <Content Include="Графика\Shield\Щит00021.png" />
+    <Content Include="Графика\Shield\Щит00022.png" />
+    <Content Include="Графика\Shield\Щит00023.png" />
+    <Content Include="Графика\Shield\Щит00024.png" />
+    <Content Include="Графика\Shield\Щит00025.png" />
+    <Content Include="Графика\Shield\Щит00026.png" />
+    <Content Include="Графика\Shield\Щит00027.png" />
+    <Content Include="Графика\Shield\Щит00028.png" />
+    <Content Include="Графика\Shield\Щит00029.png" />
+    <Content Include="Графика\Shield\Щит00030.png" />
+    <Content Include="Графика\Shield\Щит00031.png" />
+    <Content Include="Графика\Shield\Щит00032.png" />
+    <Content Include="Графика\Shield\Щит00033.png" />
+    <Content Include="Графика\Shield\Щит00034.png" />
+    <Content Include="Графика\Shield\Щит00035.png" />
+    <Content Include="Графика\Shield\Щит00036.png" />
+    <Content Include="Графика\Shield\Щит00037.png" />
+    <Content Include="Графика\Shield\Щит00038.png" />
+    <Content Include="Графика\Shield\Щит00039.png" />
+    <Content Include="Графика\Shield\Щит00040.png" />
+    <Content Include="Графика\Shield\Щит00041.png" />
+    <Content Include="Графика\Shield\Щит00042.png" />
+    <Content Include="Графика\Shield\Щит00043.png" />
+    <Content Include="Графика\Shield\Щит00044.png" />
+    <Content Include="Графика\Shield\Щит00045.png" />
+    <Content Include="Графика\Shield\Щит00046.png" />
+    <Content Include="Графика\Shield\Щит00047.png" />
+    <Content Include="Графика\Shield\Щит00048.png" />
+    <Content Include="Графика\Shield\Щит00049.png" />
+    <Content Include="Графика\Shield\Щит00050.png" />
+    <Content Include="Графика\Shield\Щит00051.png" />
+    <Content Include="Графика\Shield\Щит00052.png" />
+    <Content Include="Графика\Shield\Щит00053.png" />
+    <Content Include="Графика\Shield\Щит00054.png" />
+    <Content Include="Графика\Shield\Щит00055.png" />
+    <Content Include="Графика\Shield\Щит00056.png" />
+    <Content Include="Графика\Shield\Щит00057.png" />
+    <Content Include="Графика\Shield\Щит00058.png" />
+    <Content Include="Графика\Shield\Щит00059.png" />
+    <Content Include="Графика\Shield\Щит00060.png" />
+    <Content Include="Графика\Shield\Щит00061.png" />
+    <Content Include="Графика\Shield\Щит00062.png" />
+    <Content Include="Графика\Shield\Щит00063.png" />
+    <Content Include="Графика\Shield\Щит00064.png" />
+    <Content Include="Графика\Shield\Щит00065.png" />
+    <Content Include="Графика\Shield\Щит00066.png" />
+    <Content Include="Графика\Shield\Щит00067.png" />
+    <Content Include="Графика\Shield\Щит00068.png" />
+    <Content Include="Графика\Shield\Щит00069.png" />
+    <Content Include="Графика\Shield\Щит00070.png" />
+    <Content Include="Графика\Shield\Щит00071.png" />
+    <Content Include="Графика\Shield\Щит00072.png" />
+    <Content Include="Графика\Shield\Щит00073.png" />
+    <Content Include="Графика\Shield\Щит00074.png" />
+    <Content Include="Графика\Shield\Щит00075.png" />
+    <Content Include="Графика\Shield\Щит00076.png" />
+    <Content Include="Графика\Shield\Щит00077.png" />
+    <Content Include="Графика\Shield\Щит00078.png" />
+    <Content Include="Графика\Shield\Щит00079.png" />
+    <Content Include="Графика\Shield\Щит00080.png" />
+    <Content Include="Графика\Shield\Щит00081.png" />
+    <Content Include="Графика\Shield\Щит00082.png" />
+    <Content Include="Графика\Shield\Щит00083.png" />
+    <Content Include="Графика\Shield\Щит00084.png" />
+    <Content Include="Графика\Shield\Щит00085.png" />
+    <Content Include="Графика\Shield\Щит00086.png" />
+    <Content Include="Графика\Shield\Щит00087.png" />
+    <Content Include="Графика\Shield\Щит00088.png" />
+    <Content Include="Графика\Shield\Щит00089.png" />
+    <Content Include="Графика\Shield\Щит00090.png" />
+    <Content Include="Графика\Shield\Щит00091.png" />
+    <Content Include="Графика\Shield\Щит00092.png" />
+    <Content Include="Графика\Shield\Щит00093.png" />
+    <Content Include="Графика\Shield\Щит00094.png" />
+    <Content Include="Графика\Shield\Щит00095.png" />
+    <Content Include="Графика\Shield\Щит00097.png" />
+    <Content Include="Графика\Shield\Щит00098.png" />
+    <Content Include="Графика\Shield\Щит00099.png" />
+    <Content Include="Графика\Shield\Щит00100.png" />
+    <Content Include="Графика\Старые\BackTank.png" />
+    <Content Include="Графика\Старые\Танки.png" />
+    <Content Include="Танки.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
